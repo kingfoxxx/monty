@@ -29,5 +29,5 @@ void f_swap(stack_t **head, unsigned int counter)
 	f = *head;
 	xus = f->n;
 	f->n = f->next->n;
-	f->next->n = aux;
+	f->next->n = xus;
 }
