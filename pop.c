@@ -8,7 +8,7 @@
 */
 void f_pop(stack_t **head, unsigned int counter)
 {
-	stack_t *f;
+	stack_t *h;
 
 	if (*head == NULL)
 	{
@@ -18,7 +18,7 @@ void f_pop(stack_t **head, unsigned int counter)
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	f = *head;
-	*head = f->next;
-	free(f);
+	h = *head;
+	*head = h->next;
+	free(h);
 }
