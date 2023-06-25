@@ -8,9 +8,9 @@
  * Return: no return
 */
 
+
 void f_add(stack_t **head, unsigned int counter)
 {
-
 	stack_t *h;
 	int len = 0, aux;
 

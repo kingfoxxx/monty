@@ -1,5 +1,6 @@
 #include "monty.h"
 bus_t bus = {NULL, NULL, NULL, 0};
+
 /**
 * main - monty code interpreter for stack
 * @argc: number of arguments
@@ -9,9 +10,9 @@ bus_t bus = {NULL, NULL, NULL, 0};
 
 int main(int argc, char *argv[])
 {
-	char *context;
+	char *content;
 	FILE *file;
-	size_t sign = 0;
+	size_t size = 0;
 	ssize_t read_line = 1;
 	stack_t *stack = NULL;
 	unsigned int counter = 0;
@@ -30,15 +31,15 @@ int main(int argc, char *argv[])
 	}
 	while (read_line > 0)
 	{
-		context = NULL;
-		read_line = getline(&context, &sign, file);
-		bus.content = context;
+		content = NULL;
+		read_line = getline(&content, &size, file);
+		bus.content = content;
 		counter++;
 		if (read_line > 0)
 		{
-			execute(context, &stack, counter, file);
+			execute(content, &stack, counter, file);
 		}
-		free(context);
+		free(content);
 	}
 	free_stack(stack);
 	fclose(file);

@@ -1,4 +1,5 @@
 #include "monty.h"
+
 /**
  * f_pall - prints stack
  * @head: the head of stack
@@ -8,15 +9,15 @@
 
 void f_pall(stack_t **head, unsigned int counter)
 {
-	stack_t *f;
+	stack_t *h;
 	(void)counter;
 
-	f = *head;
-	if (f == NULL)
+	h = *head;
+	if (h == NULL)
 		return;
-	while (f)
+	while (h)
 	{
-		printf("%d\n", f->n);
-		f = f->next;
+		printf("%d\n", h->n);
+		h = h->next;
 	}
 }

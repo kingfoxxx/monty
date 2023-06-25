@@ -7,6 +7,7 @@
  * Return: no return
 */
 
+
 void f_pint(stack_t **head, unsigned int counter)
 {
 	if (*head == NULL)

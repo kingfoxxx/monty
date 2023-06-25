@@ -9,20 +9,20 @@
 
 void f_rotr(stack_t **head, __attribute__((unused)) unsigned int counter)
 {
-	stack_t *cup;
+	stack_t *copy;
 
-	cup = *head;
+	copy = *head;
 	if (*head == NULL || (*head)->next == NULL)
 	{
 		return;
 	}
-	while (cup->next)
+	while (copy->next)
 	{
-		cup = cup->next;
+		copy = copy->next;
 	}
-	cup->next = *head;
-	cup->prev->next = NULL;
-	cup->prev = NULL;
-	(*head)->prev = cup;
-	(*head) = cup;
+	copy->next = *head;
+	copy->prev->next = NULL;
+	copy->prev = NULL;
+	(*head)->prev = copy;
+	(*head) = copy;
 }

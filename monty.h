@@ -10,7 +10,8 @@
 #include <fcntl.h>
 
 /**
- * struct stack_s - double linked list representation of a stack (or queue) available in monty
+ * struct stack_s - double linked list representation of a stack
+ * (or queue) available in monty
  * @n: integer
  * @prev: points to the previous element of the stack (or queue)
  * @next: points to the next element of the stack (or queue)
@@ -28,7 +29,7 @@ typedef struct stack_s
 
 /**
  * struct bus_s - variables -args, file, line contents
- * @arg: value
+ * @arg: value for arg
  * @file: pointer to monty file
  * @content: line content
  * @lifi: flag change stack <-> queue

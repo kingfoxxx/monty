@@ -5,11 +5,12 @@
 * @stack: head linked list - stack
 * @counter: line_counter
 * @file: poiner to monty file
-* @context: line content
+* @content: line content
 * Return: no return
 */
 
-int execute(char *context, stack_t **stack, unsigned int counter, FILE *file)
+
+int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 {
 	instruction_t opst[] = {
 				{"push", f_push}, {"pall", f_pall}, {"pint", f_pint},
@@ -32,7 +33,7 @@ int execute(char *context, stack_t **stack, unsigned int counter, FILE *file)
 	unsigned int i = 0;
 	char *op;
 
-	op = strtok(context, " \n\t");
+	op = strtok(content, " \n\t");
 	if (op && op[0] == '#')
 		return (0);
 	bus.arg = strtok(NULL, " \n\t");
@@ -47,7 +48,7 @@ int execute(char *context, stack_t **stack, unsigned int counter, FILE *file)
 	if (op && opst[i].opcode == NULL)
 	{ fprintf(stderr, "L%d: unknown instruction %s\n", counter, op);
 		fclose(file);
-		free(context);
+		free(content);
 		free_stack(*stack);
 		exit(EXIT_FAILURE); }
 	return (1);

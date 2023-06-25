@@ -10,17 +10,17 @@
 void addnode(stack_t **head, int n)
 {
 
-	stack_t *news_node, *aux;
+	stack_t *new_node, *aux;
 
 	aux = *head;
-	news_node = malloc(sizeof(stack_t));
-	if (news_node == NULL)
+	new_node = malloc(sizeof(stack_t));
+	if (new_node == NULL)
 	{ printf("Error\n");
 		exit(0); }
 	if (aux)
-		aux->prev = news_node;
-	news_node->n = n;
-	news_node->next = *head;
-	news_node->prev = NULL;
-	*head = news_node;
+		aux->prev = new_node;
+	new_node->n = n;
+	new_node->next = *head;
+	new_node->prev = NULL;
+	*head = new_node;
 }
