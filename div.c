@@ -7,15 +7,16 @@
  * Return: no return
 */
 
+
 void f_div(stack_t **head, unsigned int counter)
 {
-	stack_t *m;
+	stack_t *h;
 	int len = 0, aux;
 
-	m = *head;
-	while (m)
+	h = *head;
+	while (h)
 	{
-		m = m->next;
+		h = h->next;
 		len++;
 	}
 	if (len < 2)
@@ -26,8 +27,8 @@ void f_div(stack_t **head, unsigned int counter)
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	m = *head;
-	if (m->n == 0)
+	h = *head;
+	if (h->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", counter);
 		fclose(bus.file);
@@ -35,8 +36,8 @@ void f_div(stack_t **head, unsigned int counter)
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	aux = m->next->n / m->n;
-	m->next->n = aux;
-	*head = m->next;
-	free(m);
+	aux = h->next->n / h->n;
+	h->next->n = aux;
+	*head = h->next;
+	free(h);
 }
